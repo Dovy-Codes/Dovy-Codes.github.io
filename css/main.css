@@ -5,7 +5,7 @@
 :root {
     --white: rgb(238, 237, 237);
     --green-dark: #076824;
-    --yellow: #f1c500;
+    --yellow: #FFDE59;
     --yellow-dark: #b49300;
     --red: #d44840;
     --red-dark: #aa3835;
@@ -103,6 +103,7 @@ nav {
 ul {
     display: flex;
     justify-content: center;
+    align-items: center;
 
     background-color: var(--black);
 }
@@ -113,25 +114,23 @@ ul {
     font-size: 1.1rem;
     line-height: 1;
     text-decoration: none;
-    color: var(--white);
+    color: var(--yellow);
     margin-inline: auto;
 }
-
+.nav-other a{
+    transition: transform 350ms ease-in-out;
+}
 .nav-other:hover a{
-    background-color: var(--grey);
-    color: var(--grey-Xdark);
-    border-radius: 3px;
-    }
-
-.nav-home {
-    background-color: var(--grey-Xdark);
-    border-radius: 3px;
+    transform: translateY(-10%);
 }
 
-.nav-home:hover a{
-    color: var(--yellow);
-    background-color: var(--grey-dark);
-    border-radius: 3px;
+.nav-home img{
+    height: 3rem;
+    transition: all 2s ease-in-out;
+}
+
+.nav-home:hover img{
+    scale: 1.1;
 }
 
 
