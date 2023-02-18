@@ -126,11 +126,11 @@ ul {
 
 .nav-home img{
     height: 3rem;
-    transition: all 2s ease-in-out;
+    transition: all 350ms ease-in-out;
 }
 
 .nav-home:hover img{
-    scale: 1.1;
+    scale: 1.02;
 }
 
 
