@@ -92,44 +92,66 @@ ul {
 
 /**---------Navigation----------------
 -------------------------------------**/
-nav {
+.nav-container {
     position: fixed;
     top:0;
     left:0;
     width: 100%;
     z-index: 10;
-}
-
-ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     background-color: var(--black);
 }
 
-.list-items a{
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links ul{
+    display: flex;
+}
+
+.nav-link{
     display: block;
-    padding: .5em;
+    padding: 1rem;
     font-size: 1.1rem;
-    line-height: 1;
     text-decoration: none;
     color: var(--yellow);
-    margin-inline: auto;
 }
-.nav-other a{
+#toggle-button {
+    display: none;
+    position: absolute;
+    right: 1rem;
+    top: .75rem;
+    text-decoration: none;
+}
+
+i {
+    color: var(--yellow);
+}
+
+
+/*Nav bar hover animations*/
+.nav-links li a{
     transition: transform 350ms ease-in-out;
 }
-.nav-other:hover a{
+.nav-links li:hover a{
     transform: translateY(-10%);
 }
 
-.nav-home img{
+.nav-brand{
+    position: relative;
+    display: block;
+    top: .25rem;
+    left: 1rem;
+}
+
+.nav-brand img{
     height: 3rem;
     transition: all 350ms ease-in-out;
 }
 
-.nav-home:hover img{
+.nav-brand:hover img{
     scale: 1.02;
 }
 
@@ -438,5 +460,36 @@ footer {
 @media only screen and (max-width:1500px) and (min-width:350px) {
     #about, #github, #contact {
         margin: 1rem;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    #toggle-button {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+    }
+
+    .nav-links ul{
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links.active{
+        display: flex;
+    }
+
+    .nav-link{
+        text-align: center;
+        padding: 0.5rem;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
