@@ -110,11 +110,29 @@ ul {
 
 .nav-link{
     display: block;
-    padding: 1rem;
+    position: relative;
+    margin: 1rem;
     font-size: 1.1rem;
     text-decoration: none;
     color: var(--yellow);
 }
+
+.nav-links a::after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 0%;
+    left: 0;
+    bottom: 0;
+    background-color: var(--yellow);
+    transition: width 250ms ease-in-out;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
 #toggle-button {
     display: none;
     position: absolute;
@@ -460,6 +478,8 @@ footer {
     }
 }
 
+
+/* This is for nav bar on small screens*/
 @media only screen and (max-width:450px) {
     #toggle-button {
         display: flex;
@@ -476,6 +496,7 @@ footer {
         background-color: var(--black);
         z-index: 10;
     }
+
     .nav-links {
         position: absolute;
         width: 100%;
@@ -497,7 +518,7 @@ footer {
 
     .nav-link{
         text-align: center;
-        padding: 0.5rem;
+        margin: 0.5rem;
     }
 
 }
