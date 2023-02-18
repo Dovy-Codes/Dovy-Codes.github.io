@@ -93,18 +93,15 @@ ul {
 /**---------Navigation----------------
 -------------------------------------**/
 .nav-container {
+    display: flex;
     position: fixed;
+    justify-content: space-between;
+    align-items: center;
     top:0;
     left:0;
     width: 100%;
     z-index: 10;
     background-color: var(--black);
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .nav-links ul{
@@ -468,9 +465,24 @@ footer {
         display: flex;
     }
 
-    .nav-links {
-        display: none;
+
+    /* This is needed to hide nav that is about to go into view*/
+    .hide-nav{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         width: 100%;
+        height: 100%;
+        background-color: var(--black);
+        z-index: 10;
+    }
+    .nav-links {
+        position: absolute;
+        width: 100%;
+        top: -290px;
+        background-color: var(--black);
+        transition: .5s ease-in-out;
+        z-index: -1;
     }
 
     .nav-links ul{
@@ -480,7 +492,7 @@ footer {
     }
 
     .nav-links.active{
-        display: flex;
+        top: 100%;
     }
 
     .nav-link{
@@ -488,8 +500,4 @@ footer {
         padding: 0.5rem;
     }
 
-    .nav-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
 }
