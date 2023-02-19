@@ -7,14 +7,16 @@ toggleButton.addEventListener("click", () => {
     navBar.classList.toggle("active")
 })
 
-// const welcome = ["Hello!", "¡Hola!", "Привет!", "Labas!"];
-// let i = 0;
-// setInterval(Hello, 2000);
-// function Hello() {
-//     if(i >= welcome.length-1) {
-//         i = 0;
-//     } else { i++; }
-//     document.getElementById("hi").innerHTML = welcome[i];
-//     // document.getElementById("hi").innerHTML = welcome[i];
-// }   
-
+document.getElementById("close").addEventListener("click", closeForm);
+function closeForm(){
+    $(".modal").fadeOut()
+}
+document.getElementById("openForm").addEventListener("click", openForm);
+document.getElementById("openForm2").addEventListener("click", openForm);
+function openForm(){
+    $(".modal").fadeIn();
+    //Here I close Navbar on Mobile
+    if(navBar.classList.contains("active")){
+        navBar.classList.toggle("active");
+    }
+}
