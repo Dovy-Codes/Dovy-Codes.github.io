@@ -173,7 +173,30 @@ i {
 
 /**---------Hero----------------------
 -------------------------------------**/
-.Hero {
+.hero {
+    display: flex;
+    padding-top: 3rem;
+    width: 100%;
+}
+.img-container{
+    overflow: clip;
+}
+
+.img-container img{
+    position: relative;
+    margin-right: -6rem;
+    height: 100%;
+}
+
+h1 {
+    position: absolute;
+    font-size: 2rem;
+    color: var(--yellow);
+    top: 20%;
+    left: 15vw;
+    text-align: left;
+}
+/* .Hero {
     display: block;
     padding-top: 3rem;
     background-image: linear-gradient(rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.30)), url("../images/keyboard-2.jpg");
@@ -211,7 +234,7 @@ q::before {
 q::after {
     content: close-quote;
     font-size: 1.4rem;
-}
+} */
 
 /**---------About---------------------
 -------------------------------------**/
@@ -225,7 +248,7 @@ q::after {
 }
 
 .computer {
-    padding: 3em 1em 0 1em;
+    padding: 0 1em;
 }
 
 .computer img {
@@ -473,7 +496,7 @@ footer {
     this is the only way to add it but I don't want it to
     translate into narrow displays.**/
 @media only screen and (max-width:1500px) and (min-width:350px) {
-    #about, #github, #contact {
+    #github, #contact {
         margin: 1rem;
     }
 }
