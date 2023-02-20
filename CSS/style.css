@@ -353,7 +353,6 @@ q::after {
     display: none;
     position: fixed;
     z-index: 10;
-    padding-top: 10vh;
     left: 0;
     top: 0;
     width: 100%;
@@ -361,6 +360,15 @@ q::after {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.85);
 }
+
+.form-flex {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
 #close {
     position: absolute;
     top: 0;
