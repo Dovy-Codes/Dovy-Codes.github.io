@@ -13,6 +13,7 @@ function closeForm(){
 }
 document.getElementById("openForm").addEventListener("click", openForm);
 document.getElementById("openForm2").addEventListener("click", openForm);
+document.getElementById("openForm3").addEventListener("click", openForm);
 function openForm(){
     $(".modal").fadeIn();
     //Here I close Navbar on Mobile
