@@ -10,6 +10,7 @@ toggleButton.addEventListener("click", () => {
 document.getElementById("close").addEventListener("click", closeForm);
 function closeForm(){
     $(".modal").fadeOut()
+    document.body.removeAttribute("style", "height: 100%; overflow-y: hidden;");
 }
 document.getElementById("openForm").addEventListener("click", openForm);
 document.getElementById("openForm2").addEventListener("click", openForm);
@@ -20,4 +21,5 @@ function openForm(){
     if(navBar.classList.contains("active")){
         navBar.classList.toggle("active");
     }
+    document.body.setAttribute("style", "height: 100%; overflow-y: hidden;");
 }
