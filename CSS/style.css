@@ -174,16 +174,17 @@ i {
 /**---------Hero----------------------
 -------------------------------------**/
 .hero {
+    margin: 10rem 0;
     display: flex;
-    padding-top: 3rem;
     width: 100%;
 }
 .img-container{
+    position: relative;
     overflow: clip;
+    width: 100%;
 }
 
 .img-container img{
-    position: relative;
     margin-right: -6rem;
     height: 100%;
 }
@@ -192,8 +193,8 @@ h1 {
     position: absolute;
     font-size: 2rem;
     color: var(--yellow);
-    top: 20%;
-    left: 15vw;
+    top: 10%;
+    left: 15%;
     text-align: left;
 }
 /* .Hero {
@@ -240,7 +241,8 @@ q::after {
 -------------------------------------**/
 
 #about {
-    color: var(--white);     
+    color: var(--white);
+    margin-bottom: 10rem;   
 }
 
 .link {
@@ -328,20 +330,84 @@ q::after {
     margin-inline: .25em;
 }
 
-/**---------Github--------------------
+/**---------Projects--------------------
 -------------------------------------**/
-#github {
+#all-projects{
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+h2 {
+    color: var(--yellow);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.project {
+    display: flex;
+    position: relative;
+    min-height: 370px;
+    min-width: min(400px, 100%);
+    max-width: 400px;
+    justify-content: center;
+    align-items: center;
     background-color: var(--white);
     border-radius: 5px;
-    padding: 1em 0 5em 0;
+    /* padding: 1em 0 5em 0; */
+    margin: 1rem .5rem;
 }
 
-.github-img {
-    margin-bottom:3em;
+#travel-website .link,
+#todo-app .link,
+#this-website .link {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.50);
+    color: var(--yellow);
+    font-size: 1.5rem;
+    border-radius: 5px;
 }
 
-.github-text p {
-    padding-bottom: 1em;
+#travel-website .link:hover,
+#todo-app .link:hover,
+#this-website .link:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+} 
+
+#travel-website {
+    background: url(../images/travel-website.png) no-repeat center;
+    background-size: cover;
+    transition: .35s ease-in-out;
+}
+
+#todo-app {
+    background: url(../images/Todo.png) no-repeat center;
+    background-size: cover;
+    transition: .35s ease-in-out;
+}
+
+#this-website {
+    background: url(../images/This-website.png) no-repeat center;
+    background-size: cover;
+    transition: .35s ease-in-out;
+}
+#github {
+    max-height: 370px;
+    transition: .35s ease-in-out;
+}
+.github-img{
+    max-width: 432px;
+    margin: 0 auto;
 }
 
 #github-logo{
@@ -388,7 +454,6 @@ q::after {
 
 #contact {
     position: relative;
-    margin-top: 4em;
     border: 3px solid var(--white);
     border-radius: 5px;
 }
@@ -400,7 +465,7 @@ form {
 }
 
 .message-img {
-    padding: 1em 1em 0 1em;
+    padding: 2em;
 }
 
 .message-img img{
@@ -457,21 +522,30 @@ input[type="submit"]:hover {
 
 #openForm2 {
     position: fixed;
-    padding-top: 3px;
-    padding-inline: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .25rem .5rem 0 .5rem;
     bottom: 0;
     right: 1rem;
     background-color: var(--yellow);
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
+    transition: background-color .25s ease-in-out;
+    cursor: pointer;
+    color: var(--grey-Xdark)
 }
+#openForm2 p{
+    display: none;
+    margin-right: .5rem;
+    font-weight: 700;
+}
+
 #openForm2 i{
     color: var(--grey-Xdark);
 }
 
-#openForm2:hover,
-#openForm2 i:hover {
-    color: var(--grey-dark);
+#openForm2:hover {
     background-color: var(--yellow-dark);
 }
 /**---------Footer--------------------
@@ -481,8 +555,8 @@ footer {
     Margin-top: 5em;
     padding: 2em 0;
     width:100%;
-    background-color: var(--white);
-    color: var(--grey-dark);
+    background-color: var(--black);
+    color: var(--yellow-dark);
 }
 
 /**---------@Media--------------------
@@ -501,22 +575,27 @@ footer {
     .github-text p {
         font-size: 1.25rem;
     }
-    #about, #github, #contact{
+    #about, #contact{
         max-width: 1440px;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        justify-content: center;
         padding: 1em 0;
         margin-inline: auto;
     }
 
-    #box-1, #box-2, #box-3, #box-4, #box-5, #box-6 {
+    #box-1, #box-2, #box-4{
         /* min-width: 500px; */
         max-width: 50%;
         padding: 2em;
     }
 
-    #box-3, #box-6 {
+    #box-5{
+        max-width: 50%;
+    }
+
+    #box-6 {
         margin-inline: auto;
     }
 
@@ -533,9 +612,28 @@ footer {
     }
 }
 
+@media only screen and (min-width:800px){
+    #all-projects{
+        display: flex;
+        flex-direction: row;
+    }
+    #openForm2 p{
+        display: inline-block;
+    }
+}
+
+@media only screen and (max-width:1054px) and (min-width:455px) {
+    .message-img{
+        width: 425px;
+    }
+    #contact .container {
+        margin: 0 auto;
+    }
+ }
+
 /** If screen size is smaller then 1054px **/
 @media only screen and (max-width:1054px) {
-    #box-1, #box-2, #box-3, #box-5, #box-6 {
+    #box-1, #box-2, #box-5, #box-6 {
         max-width: 100%;
     }
     #box-4 {
@@ -543,18 +641,8 @@ footer {
         margin-inline: auto;
         padding-bottom: 0;
     }
-    .github-img {
-        margin-bottom: 1em;
-    }
-}
-
-/** I want a bit of distance of the sides on these 
-    elements due to centering with margin-inline: auto
-    this is the only way to add it but I don't want it to
-    translate into narrow displays.**/
-@media only screen and (max-width:1500px) and (min-width:350px) {
-    #github, #contact {
-        margin: 1rem;
+    .modal {
+        height: 100vh;
     }
 }
 
@@ -599,6 +687,51 @@ footer {
     .nav-link{
         text-align: center;
         margin: 0.5rem;
+    }
+
+}
+
+/*When screen is bigger then 1205px I change the layout of projects section*/
+@media only screen and (min-width:1205px) { 
+    #all-projects{
+        max-width: 1440px;
+        margin: 0 auto;
+    } 
+
+    .project{
+        margin: 0;
+    }
+
+    .project:nth-child(1){ 
+        width: 65%;
+        max-width: none;
+     }
+
+     .project:nth-child(2){
+        width: 30%;
+        max-width: none; 
+     }
+
+     .project:nth-child(3){
+        width: 65%;
+        max-width: none; 
+        order: 2;
+     }
+
+     .project:nth-child(4){ 
+        order: 1;
+        width: 30%;
+        max-width: none;
+     }
+
+    #github .wrap{
+        background-color: rgba(0, 0, 0, 0.50);
+        height: 370px;
+        width: 100%;
+    }
+
+    #github:hover .wrap{
+        background-color: rgba(0, 0, 0, 0);
     }
 
 }

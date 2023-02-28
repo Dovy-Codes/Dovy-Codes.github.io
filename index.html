@@ -36,11 +36,9 @@
 
 <!-----------------Hero----------------->
 <div class="hero">
-    <div class="h1-container">
-        <h1 id="hi">Hi!</h1>
-    </div>
     <div class="img-container">
         <img src="./images/me3-bg-del.png" alt="Photo of Me">
+        <h1 id="hi">Hi!</h1>
     </div>
 </div>
 <!-- <div class="Hero">
@@ -75,8 +73,7 @@
             <div class="about-me">
                 <p class="about-text">
                     I am a Front-End Web Developer who loves creative 
-                    and responsive layouts. I am currently looking for 
-                    a work opportunity in IT indistry!
+                    and responsive layouts.
                     I am a graduate of <a class="link" href="https://www.pitman-training.com/" target="_blank">Pitman Training</a>, 
                     I have experience using these programming languages:
                 </p> 
@@ -109,29 +106,44 @@
         </div>
     </div>
 </div>
-<!-----------------Github----------------->
-<div id="github">
+<!-----------------Projects----------------->
+<h2>My Projects</h2>
+<div id="all-projects">
 
-    <div id="box-4">
+    <div id="travel-website" class="project">
         <div class="container">
-            <div class="github-img">
-                <img src="./images/GitHub_Logo.png" alt="Github Logo">
-            </div>
+            <a class="link" href="https://github.com/Dovy-Codes/HTML-and-CSS-Projects/tree/main/Project_1" target="_blank">Travel Website</a>
         </div>
     </div>
 
-    <div id="box-3">
+    <div id="todo-app" class="project">
         <div class="container">
-            <div class="github-text">
-                <p>You can view my projects on my Github account here:</p>
-                <a class="link" href="https://github.com/Dovy-Codes" target="_blank">
-                    <img src="./images/github-mark-yellow.png"  id="github-logo" alt="Github-logo">
-                    <p>Dovy-Codes</p>
-                </a>
-            </div>
+            <a class="link" href="https://github.com/Dovy-Codes/ToDo_app" target="_blank">Todo app</a>
         </div>
     </div>
 
+    <div id="this-website" class="project">
+        <div class="container">
+            <a class="link" href="https://github.com/Dovy-Codes/Dovy-Codes.github.io" target="_blank">This Website</a>
+        </div>
+    </div>
+
+    <div id="github" class="project">
+        <div class="wrap">
+            <div class="container">
+                <div class="github-img">
+                    <img src="./images/GitHub_Logo.png" alt="Github Logo">
+                </div>
+                <div class="github-text">
+                    <p>You can view all of   my projects on my Github account here:</p>
+                    <a class="link" href="https://github.com/Dovy-Codes" target="_blank">
+                        <img src="./images/github-mark-yellow.png"  id="github-logo" alt="Github-logo">
+                        <p>Dovy-Codes</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-----------------Form------------------->
 <div id="myModal" class="modal">
@@ -166,7 +178,7 @@
         </div>
     </div>   
 </div>
-<div id="openForm2"><i class="fa-solid fa-envelope fa-2x"></i></div>
+<div id="openForm2"><p>Contact me!</p><i class="fa-solid fa-envelope fa-2x"></i></div>
 <!-----------------Footer----------------->
 <div id="footer">
     <footer>
@@ -181,8 +193,40 @@
             $("#hi").fadeOut(function(){
                 $(this).html(welcome[(i =(i + 1) % welcome.length)]).fadeIn();
             });
-        }, 3000)
+        }, 2500)
     }) ();
+    const travel = document.getElementById("travel-website");
+    const todo = document.getElementById("todo-app");
+    const git = document.getElementById("github");
+    const thisWeb = document.getElementById("this-website");
+    todo.addEventListener("mouseover", changeWidthTop)
+    todo.addEventListener("mouseout", changeWidthTop);
+    function changeWidthTop(){
+        if ($(document).width() > 1210){
+            if(todo.getAttribute("style") == "width: 65%;"){
+                todo.setAttribute("style", "width: 30%;");
+                travel.setAttribute("style", "width: 65%;");
+            }
+            else{
+            todo.setAttribute("style", "width: 65%;");
+            travel.setAttribute("style", "width: 30%;");
+            }
+        }
+    }
+    git.addEventListener("mouseover", changeWidth)
+    git.addEventListener("mouseout", changeWidth);
+    function changeWidth(){
+        if ($(document).width() > 1210){
+            if(git.getAttribute("style") == "width: 65%;"){
+                git.setAttribute("style", "width: 30%;");
+                thisWeb.setAttribute("style", "width: 65%;");
+            }
+            else{
+            git.setAttribute("style", "width: 65%;");
+            thisWeb.setAttribute("style", "width: 30%;");
+            }
+        }
+    }
 </script>
 </body>
 </html>

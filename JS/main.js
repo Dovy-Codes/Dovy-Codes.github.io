@@ -10,6 +10,7 @@ toggleButton.addEventListener("click", () => {
 document.getElementById("close").addEventListener("click", closeForm);
 function closeForm(){
     $(".modal").fadeOut()
+    //This takes of styles off body that stopped it from scrolling
     document.body.removeAttribute("style", "height: 100%; overflow-y: hidden;");
 }
 document.getElementById("openForm").addEventListener("click", openForm);
@@ -21,5 +22,6 @@ function openForm(){
     if(navBar.classList.contains("active")){
         navBar.classList.toggle("active");
     }
+    //This makes sure that you can't scroll when the contact form is open
     document.body.setAttribute("style", "height: 100%; overflow-y: hidden;");
 }
