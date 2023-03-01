@@ -344,7 +344,7 @@ q::after {
 h2 {
     color: var(--yellow);
     font-size: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .project {
@@ -571,6 +571,9 @@ footer {
     h1 {
         font-size: 3em;
     }
+    h2{
+        margin-bottom: 2rem;
+    }
 
     .github-text p {
         font-size: 1.25rem;
@@ -610,6 +613,23 @@ footer {
     form {
         max-width: 100%;
     }
+
+    /*To pay more attention to my contact link in nav bar I change it's looks in biggers screens */
+    .nav-links li:nth-child(3) a{
+        border: solid var(--yellow) 2px;
+        padding: .5rem 1rem;;
+        margin: .5rem;
+        margin-right: 1.5rem;
+        transition: .3s ease-in-out;
+    }
+
+    .nav-links li:nth-child(3) a:hover{
+        background-color: rgba(255, 222, 89, .1);
+    }
+
+    .nav-links li:nth-child(3) a::after{
+        display: none;
+    }
 }
 
 @media only screen and (min-width:800px){
@@ -617,6 +637,7 @@ footer {
         display: flex;
         flex-direction: row;
     }
+
     #openForm2 p{
         display: inline-block;
     }
@@ -692,11 +713,15 @@ footer {
 }
 
 /*When screen is bigger then 1205px I change the layout of projects section*/
-@media only screen and (min-width:1205px) { 
+@media only screen and (min-width:1205px) {
     #all-projects{
         max-width: 1440px;
         margin: 0 auto;
     } 
+    #travel-website .link{border-radius: 20px 0 0 0;}
+    #todo-app .link{border-radius: 0 20px 0 0;}
+    #this-website .link{border-radius: 0 0 20px 0;}
+    #github .wrap {border-radius: 0 0 0 20px;}
 
     .project{
         margin: 0;
@@ -705,11 +730,16 @@ footer {
     .project:nth-child(1){ 
         width: 65%;
         max-width: none;
+        border-radius: 20px 0 0 0;;
+     }
+     .project:nth-child(1) .link {
+        
      }
 
      .project:nth-child(2){
         width: 30%;
-        max-width: none; 
+        max-width: none;
+        border-radius: 0 20px 0 0;
      }
 
      .project:nth-child(3){
@@ -722,6 +752,7 @@ footer {
         order: 1;
         width: 30%;
         max-width: none;
+        border-radius: 0 0 0 20px;
      }
 
     #github .wrap{
