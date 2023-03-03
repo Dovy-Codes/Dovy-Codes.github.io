@@ -691,6 +691,12 @@ footer {
     }
 }
 
+@media only screen and (max-width:500px){
+    .hero-img{
+        display: none;
+    }
+}
+
 /*If screen is smaller then 800px*/
 @media only screen and (min-width:800px){
     #all-projects{
@@ -724,6 +730,16 @@ footer {
     }
     .modal {
         height: 100vh;
+    }
+    /*Adjustmenst for hero section*/
+    #name, .links p{
+        font-size: 1rem;
+    }
+    .long-text {
+        font-size: .8rem
+    }
+    .hero h1 {
+        font-size: 3.5rem;
     }
 }
 
