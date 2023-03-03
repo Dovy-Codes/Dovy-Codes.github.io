@@ -1,0 +1,852 @@
+
+/**------Global Variables and broad styles-----
+-------------------------------------**/
+
+:root {
+    --white: rgb(238, 237, 237);
+    --green-dark: #076824;
+    --yellow: #FFDE59;
+    --yellow-dark: #b49300;
+    --red: #d44840;
+    --red-dark: #aa3835;
+    --grey: #f0f2f2;
+    --grey-dark: #7b8383;
+    --grey-Xdark: #272b2b;
+    --black: #181818;
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  *, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+  
+body, body * {
+    margin: 0;
+    padding: 0;
+}
+
+.low-line-height {
+    line-height: 0.5;
+}
+
+body {
+    text-align: center;
+    background-color: var(--grey-Xdark);
+}
+
+.container {
+    max-width: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+.center {
+    text-align: center;
+}
+
+/**---------Typography----------------
+-------------------------------------**/
+
+body {
+    font-family: 'Ubuntu', serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    line-height: 1;
+}
+
+h1 {
+    font-size: 2.25em;
+}
+
+form {
+    font-family: 'Ubuntu', serif;
+    font-weight: 700;
+}
+
+form input[type="submit"]{
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+}
+
+
+ul {
+    list-style: none;
+}
+
+.github-text p, a {
+    font-weight: 500;
+}
+
+/**---------Navigation----------------
+-------------------------------------**/
+.nav-container {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    top:0;
+    left:0;
+    width: 100%;
+    z-index: 10;
+    background-color: var(--black);
+}
+
+.nav-links ul{
+    display: flex;
+}
+
+.nav-link{
+    display: block;
+    position: relative;
+    margin: 1rem;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: var(--yellow);
+}
+
+.nav-links a::after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 0%;
+    left: 0;
+    bottom: 0;
+    background-color: var(--yellow);
+    transition: width 250ms ease-in-out;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+#toggle-button {
+    display: none;
+    position: absolute;
+    right: 1rem;
+    top: .75rem;
+    text-decoration: none;
+}
+
+i {
+    color: var(--yellow);
+}
+
+
+/*Nav bar hover animations*/
+.nav-links li a{
+    transition: transform 350ms ease-in-out;
+}
+.nav-links li:hover a{
+    transform: translateY(-10%);
+}
+
+.nav-brand{
+    position: relative;
+    display: block;
+    top: .25rem;
+    left: 1rem;
+}
+
+.nav-brand img{
+    height: 3rem;
+    transition: all 350ms ease-in-out;
+}
+
+.nav-brand:hover img{
+    scale: 1.02;
+}
+
+
+/**---------Hero----------------------
+-------------------------------------**/
+.hero-background{
+    background-color: #272B2B;
+    background-image: linear-gradient(rgb(0, 0, 0, .1), rgba(39, 43, 43, .9)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%237B8383' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%237B8383'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+}
+.hero {
+    position: relative;
+    margin: 3.5rem auto;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 1440px;
+    justify-content:space-between;
+}
+.hero-text{
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    color: rgba(255, 222, 89, .9);
+}
+#name {
+    margin-bottom: -1rem;
+    font-size: 1.5rem;
+    color: rgba(255, 222, 89, .7);
+}
+
+h1 {
+    font-size: 100px;
+    line-height: 1.6;
+    padding: 0 0;
+}
+.long-text{
+    max-width: 30rem;
+    margin-top: 1rem;
+    line-height: 1.8;
+}
+
+.hero .links{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 20%;
+    font-size: 1.5rem;
+}
+
+.links-line{
+    width: 5rem;
+    height: 1px;
+    border: 2px solid rgba(255, 222, 89, .7);
+    border-radius: 5px;
+    display: inline-block;
+    margin-inline: 1rem;
+}
+
+.hero .links p{
+    color: rgba(255, 222, 89, .7);
+}
+
+.link a{   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--grey-dark);
+    margin-inline: .5rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    opacity: .9;
+    text-decoration: none;
+}
+
+/**---------About---------------------
+-------------------------------------**/
+
+#about {
+    color: var(--white); 
+}
+
+.link {
+    color: var(--yellow);
+}
+
+.computer {
+    padding: 0 1em;
+}
+
+.computer img {
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.50);
+}
+
+#box-2 {
+    padding: 0 1em 3em 1em;
+}
+.about-me {
+    padding-inline: 1em;
+    position: relative;
+    margin-top: 2em;
+}
+
+.about-text {
+    padding-bottom: 2em;
+}
+
+.about-me::before {
+    content: "{";
+    font-size: 4em;
+    position: absolute;
+    top:-2rem;
+    left:-0.5rem;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+
+.about-me::after {
+    content: "}";
+    font-size: 4em;
+    position: absolute;
+    right:-0.5rem;
+    bottom:1rem;
+    color: rgba(255, 255, 255, 0.35);
+}
+/*-----------Programing Logos--------*/
+
+.programming-logos {
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.p-logo {
+    width: 50px;
+    height: 55px;
+    margin-inline: .25em;
+}
+
+#js-logo {
+    width: 55px;
+}
+
+/*-----------Framework Logos---------*/
+
+.framework-logos {
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.f-logo {
+    height:55px;
+    margin-inline: .25em;
+}
+
+/*------Visual Software Logos--------*/
+
+.visualSoft-logos {
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.vs-logo {
+    height:55px;
+    margin-inline: .25em;
+}
+
+/**---------Projects--------------------
+-------------------------------------**/
+#all-projects{
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+h2 {
+    color: var(--yellow);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.project {
+    display: flex;
+    position: relative;
+    min-height: 370px;
+    min-width: min(400px, 100%);
+    max-width: 400px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 5px;
+    /* padding: 1em 0 5em 0; */
+    margin: 1rem .5rem;
+}
+
+#travel-website .link,
+#todo-app .link,
+#this-website .link {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.50);
+    color: var(--yellow);
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+
+#travel-website .link:hover,
+#todo-app .link:hover,
+#this-website .link:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+} 
+
+#travel-website {
+    background: url(../images/travel-website.png) no-repeat center;
+    background-size: cover;
+    transition: .35s ease-in-out;
+}
+
+#todo-app {
+    background: url(../images/Todo.png) no-repeat center;
+    background-size: cover;
+    transition: .35s ease-in-out;
+}
+
+#this-website {
+    background: url(../images/This-website.png) no-repeat center;
+    background-size: cover;
+    transition: .35s ease-in-out;
+}
+#github {
+    max-height: 370px;
+    transition: .35s ease-in-out;
+}
+.github-img{
+    max-width: 432px;
+    margin: 0 auto;
+}
+
+#github-logo{
+    height:75px;
+}
+/**---------Form----------------------
+-------------------------------------**/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.form-flex {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#close {
+    position: absolute;
+    top: 0;
+    right: 0px;
+}
+#close i{
+    background-color: var(--grey-Xdark);
+    padding-inline: 10px;
+    border-radius: 5px;
+    transition: background-color, color 250ms ease-in-out;
+}
+
+#close i:hover{
+    background-color: var(--grey-dark);
+    color: var(--yellow-dark);
+}
+
+#contact {
+    position: relative;
+    border: 3px solid var(--white);
+    border-radius: 5px;
+}
+form {
+    max-width: 500px;
+    padding: 0 2rem .2rem 2rem;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.message-img {
+    padding: 2em;
+}
+
+.message-img img{
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.50);
+}
+
+form input[type="text"], input[type="email"], textarea {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    border-color: var(--white);
+    box-shadow: inset 0px 3px 1px 0px rgba(5,5,5, 0.15);
+}
+
+form input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    outline: 2px solid var(--yellow);
+}
+
+form input[type="text"], input[type="email"], textarea  {
+    padding: .3125em 0 .3125em .3125em ;
+}
+
+textarea{
+    /* padding: 1em 0; */
+    min-height: 5rem;
+}
+
+form label {
+    color: var(--white);
+    display: block;
+    font-size: 0.8em;
+    padding-top: 1em;
+}
+
+input[type="submit"] {
+    width: 6rem;
+    padding: .2em 1em;
+    margin: 1rem 0;
+    border-radius: 5px;
+    border-color: var(--yellow) ;
+    background-color: var(--yellow);
+    color: var(--grey-Xdark);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.50);
+    transition-property: background-color, border-color, color;
+    transition: 300ms ease-in-out;
+} 
+
+input[type="submit"]:hover {
+    background-color: var(--yellow-dark);
+    border-color: var(--yellow-dark) ;
+    color: var(--white);
+}
+
+#openForm2 {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .25rem .5rem 0 .5rem;
+    bottom: 0;
+    right: 1rem;
+    background-color: var(--yellow);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    transition: background-color .25s ease-in-out;
+    cursor: pointer;
+    color: var(--grey-Xdark)
+}
+#openForm2 p{
+    display: none;
+    margin-right: .5rem;
+    font-weight: 700;
+}
+
+#openForm2 i{
+    color: var(--grey-Xdark);
+}
+
+#openForm2:hover {
+    background-color: var(--yellow-dark);
+}
+/**---------Footer--------------------
+-------------------------------------**/
+footer {
+    font-size:.75rem;
+    Margin-top: 5em;
+    padding: 2em 0;
+    width:100%;
+    background-color: var(--black);
+    color: rgb(255, 222, 89, .8);
+}
+
+/**---------Fading in Animation---------
+-------------------------------------**/
+.hidden{
+    opacity:0;
+    filter: blur(5px);
+    transform: translateY(5%);
+    transition: all 1s;
+}
+
+.hiddenWT{
+    opacity:0;
+    filter: blur(5px);
+    transition: all 1s;
+}
+
+.show{
+    opacity:1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+    .hiddenWT{
+        transition: none;
+    }
+}
+
+/**---------@Media--------------------
+-------------------------------------**/
+/** If Screen is bigger than 501px **/
+@media only screen and (min-width:501px) {
+    /* Hero Section on bigger screens*/
+    .hero {
+        position: relative;
+        margin: 4rem auto;
+    }
+
+    .hero-img{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+        margin-right: 2rem;
+    }
+
+    .hero-img img {
+        margin-top: 1rem;
+        height: 80%;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    .links-line{
+        width: 10rem;
+    }
+    /*End of Hero adjustmensts*/
+    .list-items a {
+        font-size: 1.3125rem;
+    }
+
+    h2{
+        margin-bottom: 2rem;
+    }
+
+    .github-text p {
+        font-size: 1.25rem;
+    }
+    #about, #contact{
+        max-width: 1440px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 1em 0;
+        margin-inline: auto;
+    }
+
+    #box-1, #box-2, #box-4{
+        /* min-width: 500px; */
+        max-width: 50%;
+        padding: 2em;
+    }
+
+    #box-5{
+        max-width: 50%;
+    }
+
+    #box-6 {
+        margin-inline: auto;
+    }
+
+    #box-6 {
+        min-width: min(80%, 500px);
+    }
+
+    .computer {
+        padding: 1em;
+    }
+
+    form {
+        max-width: 100%;
+    }
+
+    #about {
+        margin-bottom: 10rem;
+    }
+
+    /*To pay more attention to my contact link in nav bar I change it's looks in biggers screens */
+    .nav-links li:nth-child(3) a{
+        border: solid var(--yellow) 2px;
+        padding: .5rem 1rem;;
+        margin: .5rem;
+        margin-right: 1.5rem;
+        transition: .3s ease-in-out;
+    }
+
+    .nav-links li:nth-child(3) a:hover{
+        background-color: rgba(255, 222, 89, .1);
+    }
+
+    .nav-links li:nth-child(3) a::after{
+        display: none;
+    }
+
+    #openForm2{
+        right: 1.5rem;
+    }
+}
+
+/*If screen is smaller then 501px I change hero section*/
+@media only screen and (max-width:501px){
+    .hero-img{
+        display: none;
+    }
+}
+
+/*If screen is smaller then 800px*/
+@media only screen and (min-width:800px){
+    #all-projects{
+        display: flex;
+        flex-direction: row;
+    }
+
+    #openForm2 p{
+        display: inline-block;
+    }
+}
+
+@media only screen and (max-width:1054px) and (min-width:455px) {
+    .message-img{
+        width: 425px;
+    }
+    #contact .container {
+        margin: 0 auto;
+    }
+ }
+
+/** If screen size is smaller then 1054px **/
+@media only screen and (max-width:1054px) {
+    #box-1, #box-2, #box-5, #box-6 {
+        max-width: 100%;
+    }
+    #box-4 {
+        max-width: 80%;
+        margin-inline: auto;
+        padding-bottom: 0;
+    }
+    .modal {
+        height: 100vh;
+    }
+    /*Adjustmenst for hero section*/
+    #name, .links p{
+        font-size: 1rem;
+    }
+    .long-text {
+        font-size: .8rem
+    }
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+}
+
+
+/* This is for nav bar on small screens*/
+@media only screen and (max-width:450px) {
+    #toggle-button {
+        display: flex;
+    }
+    .project {
+        margin: 1rem 0;
+    }
+
+
+    /* This is needed to hide nav that is about to go into view*/
+    .hide-nav{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+        background-color: var(--black);
+        z-index: 10;
+    }
+
+    .nav-links {
+        position: absolute;
+        width: 100%;
+        top: -290px;
+        background-color: var(--black);
+        transition: .5s ease-in-out;
+        z-index: -1;
+    }
+
+    .nav-links ul{
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links.active{
+        top: 100%;
+    }
+
+    .nav-link{
+        text-align: center;
+        margin: 0.5rem;
+    }
+
+}
+
+/*When screen is bigger then 1205px I change the layout of projects section*/
+@media only screen and (min-width:1205px) {
+    #all-projects{
+        max-width: 1440px;
+        margin: 0 auto;
+    } 
+    #travel-website .link{border-radius: 20px 0 0 0;}
+    #todo-app .link{border-radius: 0 20px 0 0;}
+    #this-website .link{border-radius: 0 0 20px 0;}
+    #github .wrap {border-radius: 0 0 0 20px;}
+
+    .project{
+        margin: 0;
+    }
+
+    .project:nth-child(1){ 
+        width: 65%;
+        max-width: none;
+        border-radius: 20px 0 0 0;;
+     }
+
+     .project:nth-child(2){
+        width: 30%;
+        max-width: none;
+        border-radius: 0 20px 0 0;
+     }
+
+     .project:nth-child(3){
+        width: 65%;
+        max-width: none; 
+        order: 2;
+     }
+
+     .project:nth-child(4){ 
+        order: 1;
+        width: 30%;
+        max-width: none;
+        border-radius: 0 0 0 20px;
+     }
+
+    #github .wrap{
+        background-color: rgba(0, 0, 0, 0.50);
+        height: 370px;
+        width: 100%;
+    }
+
+    #github:hover .wrap{
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+}

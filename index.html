@@ -8,25 +8,74 @@
     <style> 
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:wght@300;400;500;700&display=swap'); 
     </style>
-    <link rel="stylesheet" href=".//css/main.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <script src="./JS/main.js" defer></script>
+    <script src="https://kit.fontawesome.com/02caa81cae.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <body id="home">
 
 <!-------------Navigation----------------->
 
-<div class="nav-container">
-    <nav>
-        <ul class="Nav-list">
-            <li class="list-items nav-home"><a href="#home">Home</a></li>
-            <li class="list-items nav-other"><a href="#about">About</a></li>
-            <li class="list-items nav-other"><a href="#github">Github</a></li>
-            <li class="list-items nav-other"><a href="#contact">Contact</a></li>
+<div class="nav-container hiddenWT">
+    <div class="hide-nav">
+        <div class="nav-brand"><a href="#home"><img src="./images/Dovy-Codes.jpg" alt="Dovy-Codes-logo"></a></div>
+        <div id="toggle-button">
+            <i class="fa-solid fa-bars fa-2x"></i>
+        </div>
+    </div>
+    
+    <div class="nav-links">
+        <ul>
+            <li><a class="nav-link" href="#about">About</a></li>
+            <li><a class="nav-link" href="#github">Github</a></li>
+            <li><a class="nav-link" id="openForm">Contact</a></li>
         </ul>
-    </nav>
+    </div>
 </div>
 
 <!-----------------Hero----------------->
-<div class="Hero">
+<div class="hero-background hiddenWT">
+    <div class="hero">
+        <div class="hero-text">
+            <p id="name">Dovydas Pocius</p>
+            <h1>Front-End Developer</h1>
+            <div class="long-text">
+                <p>Welcome to my portfolio website.<br>
+                    Thank you for visting, here you will be able to 
+                    see <br>my background experience and get to know me a bit better.</p>
+            </div>
+            <div class="links">
+                <p>My links</p>
+                <div class="links-line"></div>
+
+                <div class="link">
+                    <a href="https://github.com/Dovy-Codes" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+                <div class="link">
+                    <a href="https://www.linkedin.com/in/dovydas-pocius-17422a253/" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-img">
+            <img src="./images/the-hero-in-mind.jpg" alt="Photo of me">
+        </div>   
+    </div>
+</div>
+<!-- changing text -->
+<!-- <div class="hero">
+    <div class="img-container">
+        <img src="./images/me3-bg-del.png" alt="Photo of Me">
+        <h1 id="hi">Hi!</h1>
+    </div>
+</div> -->
+
+<!-- 
+<div class="Hero-mobile hidden">
     <h1>
         Dovydas Pocius Portfolio
     </h1>
@@ -40,10 +89,11 @@
         Thank you for visting, here you will be able to 
         see my background experience and get to know me a bit better.
     </p>
-</div>
+</div> -->
+
 <!-----------------About------------------->
 <div id="about">
-    <div id="box-1">
+    <div id="box-1" class="hidden">
         <div class="container">
             <div class="computer">
                 <img src="./images/computer_2.jpg" alt="Image of a Laptop">
@@ -52,14 +102,13 @@
     </div>
 
 
-    <div id="box-2">
+    <div id="box-2" class="hidden">
         <div class="container">
             <div class="about-me">
                 <p class="about-text">
                     I am a Front-End Web Developer who loves creative 
-                    and responsive layouts. I am currently looking for 
-                    a work opportunity in IT indistry!
-                    I am a graduate of <a class="link" href="https://www.pitman-training.com/">Pitman Training</a>, 
+                    and responsive layouts.
+                    I am a graduate of <a class="link" href="https://www.pitman-training.com/" target="_blank">Pitman Training</a>, 
                     I have experience using these programming languages:
                 </p> 
                 <!--Logos of Coding Languages -->
@@ -85,72 +134,91 @@
                         <img src="./images/thumbnails/Gimp-logo.svg.png" class="vs-logo" id="gimp-logo" alt="Gimp-Logo">
                     </div>
                 <p class="about-text curly-brace-end">
-                    I am looking for a team to join in a full-time role or you can contact me for individual projects. <a href="#contact" class="link">Contact</a> me below!
+                    I am looking for a team to join in a full-time role or you can contact me for individual projects. Click to <a class="link" id="openForm3">Contact</a> me!
                 </p>
             </div>
         </div>
     </div>
 </div>
-<!-----------------Github----------------->
-<div id="github">
+<!-----------------Projects----------------->
+<h2 class="hidden">My Projects</h2>
+<div id="all-projects">
 
-    <div id="box-4">
+    <div id="travel-website" class="project hidden">
         <div class="container">
-            <div class="github-img">
-                <img src="./images/GitHub_Logo.png" alt="Github Logo">
-            </div>
+            <a class="link" href="https://github.com/Dovy-Codes/HTML-and-CSS-Projects/tree/main/Project_1" target="_blank">Travel Website</a>
         </div>
     </div>
 
-    <div id="box-3">
+    <div id="todo-app" class="project hidden">
         <div class="container">
-            <div class="github-text">
-                <p>You can view my projects on my Github account here:</p>
-                <a class="link" href="https://github.com/Dovy-Codes">
-                    <img src="./images/github-mark-yellow.png"  id="github-logo" alt="Github-logo">
-                    <p>Dovy-Codes</p>
-                </a>
-            </div>
+            <a class="link" href="https://github.com/Dovy-Codes/ToDo_app" target="_blank">Todo app</a>
         </div>
     </div>
 
+    <div id="this-website" class="project hidden">
+        <div class="container">
+            <a class="link" href="https://github.com/Dovy-Codes/Dovy-Codes.github.io" target="_blank">This Website</a>
+        </div>
+    </div>
+
+    <div id="github" class="project hidden">
+        <div class="wrap">
+            <div class="container">
+                <div class="github-img">
+                    <img src="./images/GitHub_Logo.png" alt="Github Logo">
+                </div>
+                <div class="github-text hiddenth">
+                    <p>You can view all of   my projects on my Github account here:</p>
+                    <a class="link" href="https://github.com/Dovy-Codes" target="_blank">
+                        <img src="./images/github-mark-yellow.png"  id="github-logo" alt="Github-logo">
+                        <p>Dovy-Codes</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 <!-----------------Form------------------->
-<div id="contact">
-    <div id="box-5">
-        <div class="container">
-            <div class="message-img">
-                <img src="./images/message-2.jpg" alt="Image of Message being sent">
+<div id="myModal" class="modal">
+    <div class="form-flex">
+        <div id="contact">
+            <div id="box-5">
+                <div class="container">
+                    <div class="message-img">
+                        <img src="./images/message-2.jpg" alt="Image of Message being sent">
+                    </div>
+                </div>
+            </div>
+
+            <div id="box-6">
+                <div class="container">
+                    <div class="form-box">
+                        <form action="#">
+                                <label for="form-name">Name:</label>
+                                <input type="text" id="form-name" name="name" placeholder="Please enter your name here">
+                                <label for="form-email">Email:</label>
+                                <input type="email" id="form-email" name="email" required placeholder="Please enter your email here">
+                                <label for="form-message">Message:</label>
+                                <textarea name="message" id="form-message"></textarea>
+                                <div class="center">
+                                <input type="submit" value="Submit">
+                                <div id="close"><i class="fa-solid fa-xmark fa-2x"></i></div> 
+                                </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div id="box-6">
-        <div class="container">
-            <div class="form-box">
-                <form action="#">
-                        <label for="form-name">Name:</label>
-                        <input type="text" id="form-name" name="name" placeholder="Please enter your name here">
-                        <label for="form-email">Email:</label>
-                        <input type="email" id="form-email" name="email" required placeholder="Please enter your email here">
-                        <label for="form-message">Message:</label>
-                        <textarea name="message" id="form-message"></textarea>
-                        <div class="center">
-                        <input type="submit" value="Submit"> 
-                        </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
+    </div>   
 </div>
+<div id="openForm2"><p>Contact me!</p><i class="fa-solid fa-envelope fa-2x"></i></div>
 <!-----------------Footer----------------->
 <div id="footer">
     <footer>
         <p>&copy; Dovydas Pocius &nbsp;|&nbsp; Dovy-Codes</p>
     </footer>
 </div>
-
-
 </body>
 </html>
