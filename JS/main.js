@@ -76,11 +76,31 @@ const observer = new IntersectionObserver((entries)=>{
     },
     {
         
-        threshold: .20,
+        threshold: .10,
     }
 );
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
+
+const observer2 = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        console.log(entry)
+        if(entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer2.unobserve(entry.target)
+        } 
+        // else {
+        //     entry.target.classList.remove("show");
+        // }
+    });
+},
+{
+    
+    threshold: .50,
+}
+);
+const hiddenElementsWT = document.querySelectorAll('.hiddenWT');
+hiddenElementsWT.forEach((el) => observer2.observe(el));
 
 //Didn't use this feature in the end but keeping it here for now, it changes text every 2.5s
 /* 
