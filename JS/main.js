@@ -26,50 +26,71 @@ function openForm(){
     document.body.setAttribute("style", "height: 100%; overflow-y: hidden;");
 }
 
-const travel = document.getElementById("travel-website");
-    const todo = document.getElementById("todo-app");
-    const git = document.getElementById("github");
-    const thisWeb = document.getElementById("this-website");
-    todo.addEventListener("mouseover", changeWidthTop)
-    todo.addEventListener("mouseout", changeWidthTop);
-    function changeWidthTop(){
-        if ($(document).width() > 1210){
-            if(todo.getAttribute("style") == "width: 65%;"){
-                todo.setAttribute("style", "width: 30%;");
-                travel.setAttribute("style", "width: 65%;");
-            }
-            else{
-            todo.setAttribute("style", "width: 65%;");
-            travel.setAttribute("style", "width: 30%;");
-            }
-        }
-    }
-    git.addEventListener("mouseover", changeWidth)
-    git.addEventListener("mouseout", changeWidth);
-    function changeWidth(){
-        if ($(document).width() > 1210){
-            if(git.getAttribute("style") == "width: 65%;"){
-                git.setAttribute("style", "width: 30%;");
-                thisWeb.setAttribute("style", "width: 65%;");
-            }
-            else{
-            git.setAttribute("style", "width: 65%;");
-            thisWeb.setAttribute("style", "width: 30%;");
-            }
-        }
-    }
 
-    //Didn't use this feature in the end but keeping it for now it changes text every 2.5s
-    /* 
-    <script type="text/javascript">
-    (function () {
-        let welcome = ["Hi!", "¡Hola!", "Привет!", "Labas!"],
-        i = 0
-        setInterval(function(){
-            $("#hi").fadeOut(function(){
-                $(this).html(welcome[(i =(i + 1) % welcome.length)]).fadeIn();
-            });
-        }, 2500)
-    }) ();
-    </script>
-    */
+//This part changes the size of project items on hover but only on screens widder then 1210px
+const travel = document.getElementById("travel-website");
+const todo = document.getElementById("todo-app");
+const git = document.getElementById("github");
+const thisWeb = document.getElementById("this-website");
+todo.addEventListener("mouseover", changeWidthTop)
+todo.addEventListener("mouseout", changeWidthTop);
+function changeWidthTop(){
+    if ($(document).width() > 1210){
+        if(todo.getAttribute("style") == "width: 65%;"){
+            todo.setAttribute("style", "width: 30%;");
+            travel.setAttribute("style", "width: 65%;");
+        }
+        else{
+        todo.setAttribute("style", "width: 65%;");
+        travel.setAttribute("style", "width: 30%;");
+        }
+    }
+}
+git.addEventListener("mouseover", changeWidth)
+git.addEventListener("mouseout", changeWidth);
+function changeWidth(){
+    if ($(document).width() > 1210){
+        if(git.getAttribute("style") == "width: 65%;"){
+            git.setAttribute("style", "width: 30%;");
+            thisWeb.setAttribute("style", "width: 65%;");
+        }
+        else{
+        git.setAttribute("style", "width: 65%;");
+        thisWeb.setAttribute("style", "width: 30%;");
+        }
+    }
+}
+
+//This code will fade in elements 
+const observer = new IntersectionObserver((entries)=>{
+        entries.forEach((entry)=>{
+            console.log(entry)
+            if(entry.isIntersecting) {
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target)
+            } 
+            // else {
+            //     entry.target.classList.remove("show");
+            // }
+        });
+    },
+    {
+        
+        threshold: .20,
+    }
+);
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el));
+
+//Didn't use this feature in the end but keeping it here for now, it changes text every 2.5s
+/* 
+(function () {
+    let welcome = ["Hi!", "¡Hola!", "Привет!", "Labas!"],
+    i = 0
+    setInterval(function(){
+        $("#hi").fadeOut(function(){
+            $(this).html(welcome[(i =(i + 1) % welcome.length)]).fadeIn();
+        });
+    }, 2500)
+}) ();
+*/
