@@ -75,7 +75,7 @@
 </div> -->
 
 
-<!-- <div class="Hero">
+<div class="Hero-mobile">
     <h1>
         Dovydas Pocius Portfolio
     </h1>
@@ -89,7 +89,7 @@
         Thank you for visting, here you will be able to 
         see my background experience and get to know me a bit better.
     </p>
-</div> -->
+</div>
 
 <!-----------------About------------------->
 <div id="about">
@@ -219,48 +219,5 @@
         <p>&copy; Dovydas Pocius &nbsp;|&nbsp; Dovy-Codes</p>
     </footer>
 </div>
-<script type="text/javascript">
-    (function () {
-        let welcome = ["Hi!", "¡Hola!", "Привет!", "Labas!"],
-        i = 0
-        setInterval(function(){
-            $("#hi").fadeOut(function(){
-                $(this).html(welcome[(i =(i + 1) % welcome.length)]).fadeIn();
-            });
-        }, 2500)
-    }) ();
-    const travel = document.getElementById("travel-website");
-    const todo = document.getElementById("todo-app");
-    const git = document.getElementById("github");
-    const thisWeb = document.getElementById("this-website");
-    todo.addEventListener("mouseover", changeWidthTop)
-    todo.addEventListener("mouseout", changeWidthTop);
-    function changeWidthTop(){
-        if ($(document).width() > 1210){
-            if(todo.getAttribute("style") == "width: 65%;"){
-                todo.setAttribute("style", "width: 30%;");
-                travel.setAttribute("style", "width: 65%;");
-            }
-            else{
-            todo.setAttribute("style", "width: 65%;");
-            travel.setAttribute("style", "width: 30%;");
-            }
-        }
-    }
-    git.addEventListener("mouseover", changeWidth)
-    git.addEventListener("mouseout", changeWidth);
-    function changeWidth(){
-        if ($(document).width() > 1210){
-            if(git.getAttribute("style") == "width: 65%;"){
-                git.setAttribute("style", "width: 30%;");
-                thisWeb.setAttribute("style", "width: 65%;");
-            }
-            else{
-            git.setAttribute("style", "width: 65%;");
-            thisWeb.setAttribute("style", "width: 30%;");
-            }
-        }
-    }
-</script>
 </body>
 </html>
